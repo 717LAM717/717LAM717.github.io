@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>我的書店日誌</title>
-</head>
-<body>
-
-<h1>📚 我的書店日誌</h1>
-
 <h2>文章列表</h2>
-
-<ul>
-  <li><a href="post1.html">第一篇文章</a></li>
+<ul id="post-list">
+  <!-- JavaScript 會自動生成文章連結 -->
 </ul>
 
-</body>
-</html>
+<script>
+  // 文章清單設定
+  const posts = [
+    {title: "第一篇文章", url: "posts/post1.html"},
+    // 未來新增文章只要在這裡加一行
+    // {title: "第二篇文章", url: "posts/post2.html"}
+  ];
+
+  const list = document.getElementById("post-list");
+
+  posts.forEach(post => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = post.url;
+    a.textContent = post.title;
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+</script>
