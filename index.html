@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>我的書店日誌</title>
-</head>
-<body>
-
-<h1>📚 我的書店日誌</h1>
-
-<p>歡迎來到我的書店世界，這裡記錄書的流動與故事。</p>
-
-<h2>文章列表</h2>
-<ul id="post-list">
-  <!-- JavaScript 會自動生成文章連結 -->
-</ul>
-
 <script>
-  // 文章清單設定
   const posts = [
     {title: "第一篇文章", url: "posts/post1.html"},
-    // 未來新增文章只要在這裡加一行
-    // {title: "第二篇文章", url: "posts/post2.html"}
   ];
 
   const list = document.getElementById("post-list");
@@ -34,6 +14,3 @@
     list.appendChild(li);
   });
 </script>
-
-</body>
-</html>
