@@ -3,21 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>我的書店日誌</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .post {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
 </head>
+
 <body>
 
 <h1>📚 我的書店日誌</h1>
-
 <p>歡迎來到我的書店世界，這裡記錄書的流動與故事。</p>
 
 <h2>文章列表</h2>
-<div id="post-list">
-  <!-- JavaScript 會自動生成文章連結 -->
-</div>
+<div id="post-list"></div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
 
-   const posts = [
+  const posts = [
     {
       title: "第一篇文章",
       url: "posts/post1.html",
@@ -29,6 +42,7 @@
 
   posts.forEach(post => {
     const div = document.createElement("div");
+    div.className = "post";
 
     div.innerHTML = `
       <a href="${post.url}">
