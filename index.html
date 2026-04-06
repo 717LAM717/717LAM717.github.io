@@ -17,23 +17,28 @@
 
 <script>
 
-  // 文章清單設定
   const posts = [
-    {title: "第一篇文章", url: "posts/post1.html"},
-    // 未來新增文章只要在這裡加一行
-    // {title: "第二篇文章", url: "posts/post2.html"}
-  ];
+  {
+    title: "第一篇文章",
+    url: "posts/post1.html",
+    date: "2026-04-06"
+  }
+];
 
-  const list = document.getElementById("post-list");
+const list = document.getElementById("post-list");
 
-  posts.forEach(post => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = post.url;
-    a.textContent = post.title;
-    li.appendChild(a);
-    list.appendChild(li);
-  });
+posts.forEach(post => {
+  const div = document.createElement("div");
+
+  div.innerHTML = `
+    <a href="${post.url}">
+      <h3>${post.title}</h3>
+    </a>
+    <p>${post.date}</p>
+  `;
+
+  list.appendChild(div);
+});
 </script>
 
 </body>
